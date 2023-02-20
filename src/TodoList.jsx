@@ -3,22 +3,30 @@ import List from "./List";
 
 const Form = () => {
     const [InputList, setInputList] = useState("");
-    const [inputItem,setInputItem] = useState([])
+    const [inputItem, setInputItem] = useState([])
+
     const InputHandler = (event) => {
 
-        // get value can be set to form data4
-        setInputList(event.target.value);
+        // get value can be set to form data
+        setInputList(event.target.value)
+
     };
 
     const AddItem = () =>{
+      
         setInputItem((oldValue)=>{
-            return[...oldValue,InputList]
+            if(InputList !== ""){
+                console.log(typeof(InputList))
+                return [...oldValue,InputList]
+            }else{
+                return [...oldValue]
+            }
         });
         setInputList("");
     };
 
     const deleteItem = (id) =>{
-         console.log("delete")
+        //  console.log("delete")
         setInputItem((ListValue)=>{
             return ListValue.filter((arrValue,index)=>{
                 return index !== id;
