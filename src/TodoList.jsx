@@ -16,7 +16,6 @@ const Form = () => {
       
         setInputItem((oldValue)=>{
             if(InputList !== ""){
-                console.log(typeof(InputList))
                 return [...oldValue,InputList]
             }else{
                 return [...oldValue]
@@ -26,7 +25,6 @@ const Form = () => {
     };
 
     const deleteItem = (id) =>{
-        //  console.log("delete")
         setInputItem((ListValue)=>{
             return ListValue.filter((arrValue,index)=>{
                 return index !== id;
