@@ -18,7 +18,7 @@ const Form = () => {
             if(InputList !== ""){
                 return [...oldValue,InputList]
             }else{
-                return [...oldValue]
+                return [...oldValue,"Null"]
             }
         });
         setInputList("");
